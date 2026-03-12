@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cs1j1hbdtpy60" path="res://dirt_block.tscn" id="1_70yv6"]
 [ext_resource type="PackedScene" uid="uid://dxrolsj1e0gbp" path="res://grass_block.tscn" id="2_smx3j"]
 [ext_resource type="PackedScene" uid="uid://df8ext8ecsbe" path="res://player.tscn" id="3_o2178"]
-[ext_resource type="Script" uid="uid://1x7yksejvova" path="res://Player.cs" id="4_d5upp"]
+[ext_resource type="Script" uid="uid://hx5ysela07pj" path="res://CameraController.cs" id="4_d5upp"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_o2178"]
 
@@ -1771,14 +1771,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -4)
 
 [node name="Player" parent="." unique_id=1394620431 instance=ExtResource("3_o2178")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6980743, 1.5815806, -0.95835876)
-script = ExtResource("4_d5upp")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1545253774]
-transform = Transform3D(-0.9037019, -0.3265669, 0.27690598, 0, 0.6467315, 0.7627178, -0.42816222, 0.6892695, -0.5844525, 10.421147, 9.72679, -9.373764)
-projection = 1
-fov = 49.931942
-size = 10.0
-near = 0.099
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=147775527]
 transform = Transform3D(0.8660254, -0.4829629, -0.12940954, 0.50000006, 0.8365164, 0.22414392, 0, -0.2588191, 0.96592593, 0, 0, 0)
@@ -1786,3 +1778,13 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2042490841]
 environment = SubResource("Environment_vk86k")
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=2102993686]
+script = ExtResource("4_d5upp")
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=1545253774]
+transform = Transform3D(-0.9037019, -0.3265669, 0.27690598, 0, 0.6467315, 0.7627178, -0.42816222, 0.6892695, -0.5844525, 10.421147, 9.72679, -9.373764)
+projection = 1
+fov = 49.931942
+size = 10.0
+near = 0.099
