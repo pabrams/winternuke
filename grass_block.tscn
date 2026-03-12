@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dxrolsj1e0gbp"]
+
+[ext_resource type="Texture2D" uid="uid://o0hihgnae85c" path="res://LowRes pack/terrain/terrain (1).png" id="1_hangn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r80h7"]
+albedo_texture = ExtResource("1_hangn")
+
+[sub_resource type="BoxMesh" id="BoxMesh_rj45c"]
+material = SubResource("StandardMaterial3D_r80h7")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ljtrt"]
+
+[node name="GrassBlock" type="Node3D" unique_id=1149476194]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1111893243]
+mesh = SubResource("BoxMesh_rj45c")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=913382182]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1229892801]
+shape = SubResource("BoxShape3D_ljtrt")
